@@ -9,8 +9,14 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/15-puzzle" />
+            <option value="$PROJECT_DIR$/camera-calibration" />
+            <option value="$PROJECT_DIR$/color-blob-detection" />
             <option value="$PROJECT_DIR$/face-detection" />
+            <option value="$PROJECT_DIR$/image-manipulations" />
             <option value="$PROJECT_DIR$/opencv" />
+            <option value="$PROJECT_DIR$/tutorial-1-camerapreview" />
+            <option value="$PROJECT_DIR$/tutorial-2-mixedprocessing" />
+            <option value="$PROJECT_DIR$/tutorial-3-cameracontrol" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
