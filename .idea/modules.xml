@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/15-puzzle/15-puzzle.iml" filepath="$PROJECT_DIR$/15-puzzle/15-puzzle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OpenCV4Android.iml" filepath="$PROJECT_DIR$/OpenCV4Android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/face-detection/face-detection.iml" filepath="$PROJECT_DIR$/face-detection/face-detection.iml" />
+      <module fileurl="file://$PROJECT_DIR$/opencv/opencv.iml" filepath="$PROJECT_DIR$/opencv/opencv.iml" />
+    </modules>
+  </component>
+</project>

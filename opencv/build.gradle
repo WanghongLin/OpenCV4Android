@@ -1,0 +1,55 @@
+
+// auto generated script from ./eclipse2as.sh
+
+apply plugin: 'com.android.library'
+
+android {
+	compileSdkVersion 23
+	buildToolsVersion '24.0.2'
+	defaultConfig {
+		minSdkVersion 10
+		targetSdkVersion 23
+		versionCode 3100
+		versionName '3.1.0-dev'
+	}
+	buildTypes {
+		release {
+			minifyEnabled false
+			proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+		}
+	}
+}
+
+// create aar with headers
+
+def artifactId = "opencv-with-header"
+def groupId = "com.wanghong.opencv"
+def output = "$artifactId" + "-" + android.defaultConfig.versionName + ".aar"
+
+task aarWithHeadersDebug(type: Exec) {
+    workingDir getRootDir().absolutePath + File.separator + 'opencv/src/main'
+    executable "sh"
+    args "-c", "zip -r ../../build/outputs/aar/opencv-debug.aar cpp --out ../../build/outputs/aar/$output"
+}
+
+task aarWithHeadersRelease(type: Exec) {
+    workingDir getRootDir().absolutePath + File.separator + 'opencv/src/main'
+    executable "sh"
+    args "-c", "zip -r ../../build/outputs/aar/opencv-release.aar cpp --out ../../build/outputs/aar/$output"
+}
+
+task currentVariant << {
+    println android.getLibraryVariants().each {
+        println it.getBuildType().getName()
+    }
+}
+
+aarWithHeadersDebug.dependsOn ':opencv:assembleDebug'
+aarWithHeadersRelease.dependsOn ':opencv:assembleRelease'
+
+dependencies {
+	compile fileTree(dir: 'libs', include: ['*.jar'])
+	testCompile 'junit:junit:4.12'
+	compile 'com.android.support:appcompat-v7:23.4.0'
+}
+
