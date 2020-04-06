@@ -1,7 +1,6 @@
 package org.opencv.samples.cameracalibration;
 
-import java.util.ArrayList;
-import java.util.List;
+import android.util.Log;
 
 import org.opencv.calib3d.Calib3d;
 import org.opencv.core.Core;
@@ -15,10 +14,11 @@ import org.opencv.core.Scalar;
 import org.opencv.core.Size;
 import org.opencv.imgproc.Imgproc;
 
-import android.util.Log;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CameraCalibrator {
-    private static final String TAG = "OCVSample::CameraCalibrator";
+    private static final String TAG = "OCVSample::CameraCalibr";
 
     private final Size mPatternSize = new Size(4, 11);
     private final int mCornersSize = (int)(mPatternSize.width * mPatternSize.height);

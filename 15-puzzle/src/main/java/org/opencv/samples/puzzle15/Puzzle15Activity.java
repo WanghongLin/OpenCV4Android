@@ -1,15 +1,7 @@
 package org.opencv.samples.puzzle15;
 
-import org.opencv.android.BaseLoaderCallback;
-import org.opencv.android.LoaderCallbackInterface;
-import org.opencv.android.OpenCVLoader;
-import org.opencv.core.Mat;
-import org.opencv.android.CameraBridgeViewBase;
-import org.opencv.android.CameraBridgeViewBase.CvCameraViewListener;
-import org.opencv.android.JavaCameraView;
-
-import android.os.Bundle;
 import android.app.Activity;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,9 +9,17 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 
+import org.opencv.android.BaseLoaderCallback;
+import org.opencv.android.CameraBridgeViewBase;
+import org.opencv.android.CameraBridgeViewBase.CvCameraViewListener;
+import org.opencv.android.JavaCameraView;
+import org.opencv.android.LoaderCallbackInterface;
+import org.opencv.android.OpenCVLoader;
+import org.opencv.core.Mat;
+
 public class Puzzle15Activity extends Activity implements CvCameraViewListener, View.OnTouchListener {
 
-    private static final String  TAG = "Sample::Puzzle15::Activity";
+    private static final String  TAG = "Sample::Puzzle15::Activ";
 
     private CameraBridgeViewBase mOpenCvCameraView;
     private Puzzle15Processor    mPuzzle15;

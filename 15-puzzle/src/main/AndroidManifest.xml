@@ -4,8 +4,6 @@
     android:versionCode="301"
     android:versionName="3.01" >
 
-    <uses-sdk android:minSdkVersion="8"/>
-
     <application
         android:icon="@drawable/icon"
         android:label="@string/app_name"
@@ -14,7 +12,7 @@
         <activity
             android:name=".Puzzle15Activity"
             android:label="@string/app_name"
-            android:screenOrientation="landscape"
+            android:screenOrientation="fullSensor"
             android:configChanges="keyboardHidden|orientation" >
 
             <intent-filter>

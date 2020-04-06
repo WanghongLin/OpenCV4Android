@@ -19,7 +19,7 @@ import android.util.Log;
 import android.util.Size;
 import android.view.Surface;
 
-@TargetApi(21)
+@android.support.annotation.RequiresApi(api = android.os.Build.VERSION_CODES.LOLLIPOP)
 public class Camera2Renderer extends CameraGLRendererBase {
 
     protected final String LOGTAG = "Camera2Renderer";

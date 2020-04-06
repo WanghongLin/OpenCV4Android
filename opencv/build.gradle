@@ -1,14 +1,15 @@
 
 // auto generated script from ./eclipse2as.sh
 
+apply plugin: 'com.novoda.bintray-release'
 apply plugin: 'com.android.library'
 
 android {
-	compileSdkVersion 23
-	buildToolsVersion '24.0.2'
+	compileSdkVersion 28
+	buildToolsVersion '26.0.3'
 	defaultConfig {
-		minSdkVersion 10
-		targetSdkVersion 23
+		minSdkVersion 14
+		targetSdkVersion 28
 		versionCode 3100
 		versionName '3.1.0-dev'
 	}
@@ -22,34 +23,61 @@ android {
 
 // create aar with headers
 
-def artifactId = "opencv-with-header"
-def groupId = "com.wanghong.opencv"
-def output = "$artifactId" + "-" + android.defaultConfig.versionName + ".aar"
+//def artifactId = "opencv-with-header"
+//def groupId = "com.wanghong.opencv"
+//def output = "$artifactId" + "-" + android.defaultConfig.versionName + ".aar"
 
-task aarWithHeadersDebug(type: Exec) {
-    workingDir getRootDir().absolutePath + File.separator + 'opencv/src/main'
-    executable "sh"
-    args "-c", "zip -r ../../build/outputs/aar/opencv-debug.aar cpp --out ../../build/outputs/aar/$output"
+publish {
+	def groupProjectID = "com.wanghong.opencv"
+	def artifactProjectID = "opencv-with-header"
+	def publishVersionID = "3.1.0-dev"
+
+	userOrg = 'wanghonglin'
+	groupId = groupProjectID
+	artifactId = artifactProjectID
+	publishVersion = publishVersionID
+	desc = 'opencv library with native headers bundled'
+	website = 'https://github.com/WanghongLin/OpenCV4Android'
 }
 
-task aarWithHeadersRelease(type: Exec) {
-    workingDir getRootDir().absolutePath + File.separator + 'opencv/src/main'
-    executable "sh"
-    args "-c", "zip -r ../../build/outputs/aar/opencv-release.aar cpp --out ../../build/outputs/aar/$output"
+//task aarWithHeadersDebug(type: Exec) {
+//    workingDir getRootDir().absolutePath + File.separator + 'opencv/src/main'
+//    executable "sh"
+//    args "-c", "zip -r ../../build/outputs/aar/opencv-debug.aar cpp --out ../../build/outputs/aar/$output"
+//}
+
+//task aarWithHeadersRelease(type: Exec) {
+//    workingDir getRootDir().absolutePath + File.separator + 'opencv/src/main'
+//    executable "sh"
+//    args "-c", "zip -r ../../build/outputs/aar/opencv-release.aar cpp --out ../../build/outputs/aar/$output"
+//}
+
+def createBundleHeaderIntoAarTask(def taskName, def aarFullPath) {
+	return tasks.create(taskName, Exec) {
+		workingDir getRootDir().absolutePath + File.separator + 'opencv/src/main'
+		executable "sh"
+		args "-c", "zip -u -r ${aarFullPath} cpp"
+	}
 }
 
-task currentVariant << {
-    println android.getLibraryVariants().each {
-        println it.getBuildType().getName()
-    }
-}
+//aarWithHeadersDebug.dependsOn ':opencv:assembleDebug'
+//aarWithHeadersRelease.dependsOn ':opencv:assembleRelease'
 
-aarWithHeadersDebug.dependsOn ':opencv:assembleDebug'
-aarWithHeadersRelease.dependsOn ':opencv:assembleRelease'
+afterEvaluate {
+	project.tasks.all {
+		if (it.name == 'bundleDebugAar' || it.name == 'bundleReleaseAar') {
+			// build/outputs/aar/opencv-debug.aar or build/outputs/aar/opencv-release.aar
+			def aarFullPath = it.destinationDirectory.get().toString() + File.separator + it.archiveFileName.get().toString()
+            def taskName = it.name + 'WithHeader'
+			def headerTask = createBundleHeaderIntoAarTask(taskName, aarFullPath)
+			it.finalizedBy headerTask
+		}
+	}
+}
 
 dependencies {
-	compile fileTree(dir: 'libs', include: ['*.jar'])
-	testCompile 'junit:junit:4.12'
-	compile 'com.android.support:appcompat-v7:23.4.0'
+	api fileTree(dir: 'libs', include: ['*.jar'])
+	testImplementation 'junit:junit:4.12'
+	api 'com.android.support:appcompat-v7:28.0.0'
 }
 

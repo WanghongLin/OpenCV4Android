@@ -2,16 +2,16 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/15-puzzle/15-puzzle.iml" filepath="$PROJECT_DIR$/15-puzzle/15-puzzle.iml" />
-      <module fileurl="file://$PROJECT_DIR$/OpenCV4Android.iml" filepath="$PROJECT_DIR$/OpenCV4Android.iml" />
-      <module fileurl="file://$PROJECT_DIR$/camera-calibration/camera-calibration.iml" filepath="$PROJECT_DIR$/camera-calibration/camera-calibration.iml" />
-      <module fileurl="file://$PROJECT_DIR$/color-blob-detection/color-blob-detection.iml" filepath="$PROJECT_DIR$/color-blob-detection/color-blob-detection.iml" />
-      <module fileurl="file://$PROJECT_DIR$/face-detection/face-detection.iml" filepath="$PROJECT_DIR$/face-detection/face-detection.iml" />
-      <module fileurl="file://$PROJECT_DIR$/image-manipulations/image-manipulations.iml" filepath="$PROJECT_DIR$/image-manipulations/image-manipulations.iml" />
-      <module fileurl="file://$PROJECT_DIR$/opencv/opencv.iml" filepath="$PROJECT_DIR$/opencv/opencv.iml" />
-      <module fileurl="file://$PROJECT_DIR$/tutorial-1-camerapreview/tutorial-1-camerapreview.iml" filepath="$PROJECT_DIR$/tutorial-1-camerapreview/tutorial-1-camerapreview.iml" />
-      <module fileurl="file://$PROJECT_DIR$/tutorial-2-mixedprocessing/tutorial-2-mixedprocessing.iml" filepath="$PROJECT_DIR$/tutorial-2-mixedprocessing/tutorial-2-mixedprocessing.iml" />
-      <module fileurl="file://$PROJECT_DIR$/tutorial-3-cameracontrol/tutorial-3-cameracontrol.iml" filepath="$PROJECT_DIR$/tutorial-3-cameracontrol/tutorial-3-cameracontrol.iml" />
+      <module fileurl="file://$PROJECT_DIR$/15-puzzle/15-puzzle.iml" filepath="$PROJECT_DIR$/15-puzzle/15-puzzle.iml" group="OpenCV4Android/15-puzzle" />
+      <module fileurl="file://$PROJECT_DIR$/OpenCV4Android.iml" filepath="$PROJECT_DIR$/OpenCV4Android.iml" group="OpenCV4Android" />
+      <module fileurl="file://$PROJECT_DIR$/camera-calibration/camera-calibration.iml" filepath="$PROJECT_DIR$/camera-calibration/camera-calibration.iml" group="OpenCV4Android/camera-calibration" />
+      <module fileurl="file://$PROJECT_DIR$/color-blob-detection/color-blob-detection.iml" filepath="$PROJECT_DIR$/color-blob-detection/color-blob-detection.iml" group="OpenCV4Android/color-blob-detection" />
+      <module fileurl="file://$PROJECT_DIR$/face-detection/face-detection.iml" filepath="$PROJECT_DIR$/face-detection/face-detection.iml" group="OpenCV4Android/face-detection" />
+      <module fileurl="file://$PROJECT_DIR$/image-manipulations/image-manipulations.iml" filepath="$PROJECT_DIR$/image-manipulations/image-manipulations.iml" group="OpenCV4Android/image-manipulations" />
+      <module fileurl="file://$PROJECT_DIR$/opencv/opencv.iml" filepath="$PROJECT_DIR$/opencv/opencv.iml" group="OpenCV4Android/opencv" />
+      <module fileurl="file://$PROJECT_DIR$/tutorial-1-camerapreview/tutorial-1-camerapreview.iml" filepath="$PROJECT_DIR$/tutorial-1-camerapreview/tutorial-1-camerapreview.iml" group="OpenCV4Android/tutorial-1-camerapreview" />
+      <module fileurl="file://$PROJECT_DIR$/tutorial-2-mixedprocessing/tutorial-2-mixedprocessing.iml" filepath="$PROJECT_DIR$/tutorial-2-mixedprocessing/tutorial-2-mixedprocessing.iml" group="OpenCV4Android/tutorial-2-mixedprocessing" />
+      <module fileurl="file://$PROJECT_DIR$/tutorial-3-cameracontrol/tutorial-3-cameracontrol.iml" filepath="$PROJECT_DIR$/tutorial-3-cameracontrol/tutorial-3-cameracontrol.iml" group="OpenCV4Android/tutorial-3-cameracontrol" />
     </modules>
   </component>
 </project>
