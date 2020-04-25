@@ -3,6 +3,15 @@
 
 apply plugin: 'com.novoda.bintray-release'
 apply plugin: 'com.android.library'
+apply plugin: 'com.ydq.android.gradle.native-aar.export'
+
+nativeBundleExport {
+	headerDir = "${project.projectDir}/src/main/cpp/include"
+	//bundleStatic = true
+	//extraStaticLibDir = "${project.projectDir}/xx"
+	//excludeStaticLibs.add("**/libmylib.a")
+	//excludeStaticLibs.add("**/libxx.a")
+}
 
 android {
 	compileSdkVersion 28
@@ -30,7 +39,7 @@ android {
 publish {
 	def groupProjectID = "com.wanghong.opencv"
 	def artifactProjectID = "opencv-with-header"
-	def publishVersionID = "3.1.0-dev"
+	def publishVersionID = "3.1.1-dev"
 
 	userOrg = 'wanghonglin'
 	groupId = groupProjectID
@@ -70,7 +79,7 @@ afterEvaluate {
 			def aarFullPath = it.destinationDirectory.get().toString() + File.separator + it.archiveFileName.get().toString()
             def taskName = it.name + 'WithHeader'
 			def headerTask = createBundleHeaderIntoAarTask(taskName, aarFullPath)
-			it.finalizedBy headerTask
+			// it.finalizedBy headerTask
 		}
 	}
 }
